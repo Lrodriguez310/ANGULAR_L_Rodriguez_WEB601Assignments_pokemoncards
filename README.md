@@ -2,5 +2,7 @@
 assignments for web601
 
 
-Add your name to the readme file of your repository,
-along with a brief description of the theme of your application
+Luis Rodriguez
+ID: 0812903,
+
+The theme of my application are pokemon cards. I will be showcasing the various types of pokemon cards and the price of each of the valuable ones.
