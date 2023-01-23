@@ -14,6 +14,7 @@ export class ContentCardComponent implements OnInit {
     title:"Charizard",
     description:"dragon lizard",
     creator:"Luis",
+    imgURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7I9TZfhWvUVctdeIdJ9LPrU63DUN6bM8Bh_qOJ8gjn4rtelNELyKf1w&s",
     type:"fire"
   }
   pokemonCard2:Content = {
@@ -21,6 +22,7 @@ export class ContentCardComponent implements OnInit {
     title:"Blastoise",
     description:"turtle",
     creator:"Luis",
+    imgURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7I9TZfhWvUVctdeIdJ9LPrU63DUN6bM8Bh_qOJ8gjn4rtelNELyKf1w&s",
     type:"water"
   }
   pokemonCard3:Content = {
@@ -28,6 +30,7 @@ export class ContentCardComponent implements OnInit {
     title:"venusaur",
     description:"frog",
     creator:"Luis",
+    imgURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7I9TZfhWvUVctdeIdJ9LPrU63DUN6bM8Bh_qOJ8gjn4rtelNELyKf1w&s",
     type:"Plant"
   }
 
