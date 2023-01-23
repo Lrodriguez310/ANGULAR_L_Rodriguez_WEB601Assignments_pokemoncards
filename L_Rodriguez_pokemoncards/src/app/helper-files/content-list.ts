@@ -3,11 +3,11 @@ import { Content } from "./content-interface";
 export class ContentList {
   private _items: Content[]; // private array starts with an _
 
-  constructor() { // initially set the content array to be empty
+  constructor(item: Content) { // initially set the content array to be empty
     this._items = []; // initialize array
   }
 
-  get items(): Content[] { // getter method that returns the array
+  getitems(): Content[] { // getter method that returns the array
     return this._items;
   }
 
