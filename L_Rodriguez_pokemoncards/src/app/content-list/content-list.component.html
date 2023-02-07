@@ -1,4 +1,4 @@
-<div id="content-card">
+<div id="content-card" [className]="isFirst ? 'content-card2px' : 'content-card'">
     <h4>{{ content.title }}</h4>
     <p>{{ content.description }}</p>
     <img class="image" src="{{ content.imgURL }}" (click)="imageText()"/><br>

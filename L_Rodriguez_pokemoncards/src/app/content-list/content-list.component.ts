@@ -8,7 +8,10 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentListComponent {
   @Input() content: Content;
+  @Input() isFirst: Boolean;
+
   constructor() {
+    this.isFirst=false;
     this.content = {
       id: 1,
       title:"Charizard",
