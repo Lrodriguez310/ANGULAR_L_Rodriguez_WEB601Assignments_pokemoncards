@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "gencomponent":"npm run-script generatecomponent",
+    "generatecomponent":"ng generate component",
     "genpipe":"npm run-script generatepipe",
     "gendirective":"npm run-script generateddirective"
 
