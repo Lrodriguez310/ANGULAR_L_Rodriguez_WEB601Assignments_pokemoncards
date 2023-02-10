@@ -63,6 +63,15 @@ export class AppComponent {
       type:"Ground and flying",
       tags:["stall", "gligar"]
   };
+  contentItem7:Content = {
+    id: 7,
+      title:"Chansey",
+      description:"egg type pokemon",
+      creator:"Luis",
+      imgURL:"https://assets.pokemon.com/assets/cms2/img/cards/web/SWSH12PT5/SWSH12PT5_EN_105.png",
+      type:"Normal",
+      tags:["stall", "blissey"]
+  };
 
   contentArray: Content[];
   constructor(){
@@ -73,5 +82,6 @@ export class AppComponent {
     this.contentArray.push(this.contentItem4);
     this.contentArray.push(this.contentItem5);
     this.contentArray.push(this.contentItem6);
+    this.contentArray.push(this.contentItem7);
   }
 }
