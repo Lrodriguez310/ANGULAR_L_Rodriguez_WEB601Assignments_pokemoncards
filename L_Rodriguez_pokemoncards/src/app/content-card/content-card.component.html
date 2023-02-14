@@ -8,4 +8,37 @@
         </div>
       </div>
 </div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 mt-5">
+      
+      
+      <input [(ngModel)]="searchTerm" placeholder="Enter title">
+      <button (click)="search()">Search</button>
+      <div *ngIf="message">
+        <p [ngStyle]="{ color: messageColor }">{{ message }}</p>
+      </div>
+
+
+</div> 
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+  <div class="row">
+    <h2 class="m-5">Water</h2>
+    <app-content-list class="col-md-4  mt-5 mx-1 card bg-success text-white" *ngFor="let item of contentArray | contentFilter:'Water'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
+  </div>
+
+  <div class="row">
+    <h2 class="m-5">Fire</h2>
+    <app-content-list class="col-md-4  mt-5 mx-1 card bg-dark text-light" *ngFor="let item of contentArray | contentFilter:'Fire'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
+  </div>
+
+  <div class="row">
+    <h2 class="m-5">Grass</h2>
+    <app-content-list class="col-md-4  mt-5 mx-1 card bg-primary text-dark" *ngFor="let item of contentArray | contentFilter:'Grass'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
+  </div>
 <div id="pokemonCards"></div>

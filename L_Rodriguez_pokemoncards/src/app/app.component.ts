@@ -85,3 +85,4 @@ export class AppComponent {
     this.contentArray.push(this.contentItem7);
   }
 }
+
