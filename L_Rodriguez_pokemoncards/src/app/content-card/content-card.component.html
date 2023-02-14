@@ -28,17 +28,20 @@
   </div>
 
   <div class="row">
-    <h2 class="m-5">Water</h2>
-    <app-content-list class="col-md-4  mt-5 mx-1 card bg-success text-white" *ngFor="let item of contentArray | contentFilter:'Water'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
+    <h2 class="m-5">water</h2>
+    <app-content-list class="col-md-4  mt-5 mx-1 card bg-success text-white" *ngFor="let item of contentArray | contentFilter:'water'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
   </div>
 
   <div class="row">
-    <h2 class="m-5">Fire</h2>
-    <app-content-list class="col-md-4  mt-5 mx-1 card bg-dark text-light" *ngFor="let item of contentArray | contentFilter:'Fire'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
+    <h2 class="m-5">fire</h2>
+    <app-content-list class="col-md-4  mt-5 mx-1 card bg-dark text-light" *ngFor="let item of contentArray | contentFilter:'fire'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
   </div>
 
   <div class="row">
-    <h2 class="m-5">Grass</h2>
-    <app-content-list class="col-md-4  mt-5 mx-1 card bg-primary text-dark" *ngFor="let item of contentArray | contentFilter:'Grass'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
+    <h2 class="m-5">Plant</h2>
+    <app-content-list class="col-md-4  mt-5 mx-1 card bg-primary text-dark" *ngFor="let item of contentArray | contentFilter:'Plant'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
   </div>
-<div id="pokemonCards"></div>
+
+
+  
+<!-- <div id="pokemonCards"></div> -->
