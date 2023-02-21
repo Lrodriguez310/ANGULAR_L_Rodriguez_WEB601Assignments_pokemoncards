@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -8,7 +8,40 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentCardComponent implements OnInit {
 
-  filteredString:any = '';
+  @Input() content: Content;
+  constructor() {
+    
+    this.content = {
+      id: 1,
+      title:"Charizard",
+      description:"Fire Lizard",
+      creator:"Luis Rodriguez",
+      imgURL:"https://ae01.alicdn.com/kf/Sdb2f3c7090af42da871db809a899403ea/Pokemon-New-Metal-Collection-Card-Anime-Fighting-Card-Collection-Toys-Children-s-Birthday-Gifts-Cartoon-Game.jpg_Q90.jpg_.webp",
+      type:"Fire",
+      tags:["Charmander", "Charizard"]
+    },
+    {
+    id:2,
+    title:"Blastoise",
+    description:"Water Turtle",
+    creator:"Luis Rodriguez",
+    imgURL:"https://ae01.alicdn.com/kf/Sc7d0be9f37344592b865573de73b5472d/Pokemon-New-Metal-Collection-Card-Anime-Fighting-Card-Collection-Toys-Children-s-Birthday-Gifts-Cartoon-Game.jpg_640x640.jpg",
+    type:"Water",
+    tags:["Squirtle", "Blastoise"]
+    }
+    
+}
+ngOnInit(): void {
+  
+
+}
+imageText() {
+  console.log("Image ID: " + this.content.id + "Image Url: " + this.content.imgURL + "Image Title:" + this.content.title);
+}
+
+}
+
+  /* filteredString:any = '';
   searchTerm: string = '';
   message: string = '';
   messageColor: string = '';
@@ -109,10 +142,10 @@ contentArray: Content[];
       this.messageColor = 'red';
     }
   }
+   */
   
   
-  
-    ngOnInit(): void {
+    /* ngOnInit(): void {
 //       const div = document.getElementById('pokemonCards');
 //       console.log(div);
 //       if(div) {
@@ -122,7 +155,7 @@ contentArray: Content[];
 //       }
   
     }
-  }
+  } */
 
 
 

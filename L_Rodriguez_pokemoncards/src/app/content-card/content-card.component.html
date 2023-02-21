@@ -1,3 +1,35 @@
+
+<div class="{{ content.type }}">
+  <h2>{{ content.title }}</h2>
+  <p>{{ content.description }}</p>
+  <img *ngIf="content.imgURL;else defaultImage" class="image" src="{{ content.imgURL }}" (click)="imageText()"/><br>
+  By:<em> {{ content.creator }}</em>
+  <p>
+    <span appHoverAffect highlightType="tag" *ngFor="let tag of content.tags"  >
+      #{{ tag }}
+    </span><!-- {{ content.tags }} -->
+  </p>
+  <p appHoverAffect highlightType="type" >Type: {{ content.type }}</p>
+</div>
+<ng-template #defaultImage>
+  <img class="image" src="https://ae01.alicdn.com/kf/S641257d0c1c045c09bdc8c6a2be34f39g/10000PS-Arceus-Vmax-Pokemon-Cards-Metal-Spanish-Cards-Pikachu-Charizard-Vstar-Golden-Limited-Kids-Gift-Game.jpg_Q90.jpg_.webp
+  " alt="default image">
+</ng-template>
+
+https://ae01.alicdn.com/kf/S641257d0c1c045c09bdc8c6a2be34f39g/10000PS-Arceus-Vmax-Pokemon-Cards-Metal-Spanish-Cards-Pikachu-Charizard-Vstar-Golden-Limited-Kids-Gift-Game.jpg_Q90.jpg_.webp
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <div class="row">
     <div class="card" *ngFor="let items of contentList;" style="max-width: 20rem;">
         <div class="card-header">pokemon cards</div>
@@ -9,6 +41,8 @@
       </div>
 </div> -->
 
+
+<!--
 <div class="container">
   <div class="row">
     <div class="col-md-2"></div>
@@ -41,7 +75,7 @@
     <h2 class="m-5">Plant</h2>
     <app-content-list class="col-md-4  mt-5 mx-1 card bg-success text-info plant" *ngFor="let item of contentArray | contentFilter:'Plant'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
   </div>
-
+-->
 
   
 <!-- <div id="pokemonCards"></div> -->
