@@ -93,9 +93,7 @@ export class ContentListComponent implements OnInit {
  contentArray: Content[];
   
  constructor(){
-   /*  this.myFootballPlayers.addContent(this.footballPlayer);
-    this.myFootballPlayers.addContent(this.footballPlayer2);
-    this.myFootballPlayers.addContent(this.footballPlayer3); */
+ 
     this.contentArray = [this.pokemonCard];
     /*  this.contentArray.push(this.contentItem); */
      this.contentArray.push(this.pokemonCard2);
@@ -129,6 +127,11 @@ export class ContentListComponent implements OnInit {
       card.innerHTML += this.pokemonCards.printProperties(2);
     } */
   } 
+
+  addNewContent(newContent:any){
+    this.contentArray.push(newContent);
+    this.contentArray = [...this.contentArray];
+  }
 
 
 }
