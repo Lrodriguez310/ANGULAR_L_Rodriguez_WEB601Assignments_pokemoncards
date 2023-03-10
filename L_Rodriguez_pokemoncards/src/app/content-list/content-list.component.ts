@@ -13,7 +13,7 @@ export class ContentListComponent implements OnInit {
   @Input() content:Content[];
   @Input() card:Content[];
   @Input('ngModel')title: string;
-  name= "Sravan Reddy Soma";
+  name= "Luis Rodriguez";
 
   filteredString:any = '';
   searchTerm: string = '';
