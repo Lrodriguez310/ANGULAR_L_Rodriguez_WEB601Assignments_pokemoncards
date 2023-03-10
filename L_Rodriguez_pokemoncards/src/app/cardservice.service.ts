@@ -24,11 +24,11 @@ export class CardserviceService {
   }
 
 
-  getClickedCard(cardId:number) {
-    const Clickedplayer = CONTENT.filter(obj => obj.id == cardId);
-    this.messageservice.add("Card Retrieved at id" + cardId)
-    return of(Clickedplayer)
-  }
+  // getClickedCard(cardId:number) {
+  //   const Clickedcard = CONTENT.filter(obj => obj.id == cardId);
+  //   this.messageservice.add("Card Retrieved at id" + cardId)
+  //   return of(Clickedcard)
+  // }
 
  
 }

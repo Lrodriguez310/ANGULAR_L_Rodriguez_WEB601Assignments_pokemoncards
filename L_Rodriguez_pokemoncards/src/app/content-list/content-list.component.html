@@ -7,7 +7,9 @@
 </div> -->
 
 
-
+<div *ngFor="let cards of card" class="shadow">
+  <app-content-card [content]="cards"></app-content-card>
+</div>
 
 <!-- <app-create-content class="center" (addContentEvent)="addNewContent($event)"></app-create-content> -->
 
@@ -32,15 +34,15 @@
   
     <div class="row">
       <h2 class="m-5">Fire</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-warning text-dark" *ngFor="let item of contentArray | contentFilter:'Fire'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+      <app-content-card class="col-md-4  mt-5 mx-1 card bg-warning text-dark" *ngFor="let item of content | contentFilter:'Fire'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
     </div>
   
     <div class="row">
       <h2 class="m-5">Water</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-dark text-warning" *ngFor="let item of contentArray | contentFilter:'Water'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+      <app-content-card class="col-md-4  mt-5 mx-1 card bg-dark text-warning" *ngFor="let item of content | contentFilter:'Water'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
     </div>
 
     <div class="row">
       <h2 class="m-5">Plant</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-primary text-danger" *ngFor="let item of contentArray | contentFilter:'Plant'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+      <app-content-card class="col-md-4  mt-5 mx-1 card bg-primary text-danger" *ngFor="let item of content | contentFilter:'Plant'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
     </div>
