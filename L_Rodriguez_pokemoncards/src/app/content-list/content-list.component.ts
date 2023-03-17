@@ -6,6 +6,7 @@ import { CardserviceService } from '../cardservice.service';
 
 
 
+
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
@@ -50,12 +51,19 @@ export class ContentListComponent implements OnInit {
     this.contentList = [...this.contentList];
   }
 
-  // updateContentInList(contentItem: Content): void {
-  //   this.cardservice.updateContent(contentItem)
-  //   .subscribe(() =>
-  //   console.log("Content updated successfully")
-  //   );
-  //   }
+  updateContentInList(contentItem: Content): void {
+     this.cardservice.updateContent(contentItem)
+    .subscribe(() =>
+    console.log("Content updated successfully")
+     );
+     }
+
+     addContentToList(newContentItem: Content): void {
+      this.cardservice.addContent(newContentItem).subscribe(newContentFromServer =>
+      this.contentList.push(newContentFromServer));
+      console.log('Content added succesfully : ${newContentItem.Title}');
+  
+      }
     
 
   

@@ -33,15 +33,15 @@ export class CardserviceService {
       return this.http.get<Content[]>("api/content");
     }
 
-    // addContent(newContentItem: Content): Observable<Content>{
-    //   return this.http.post<Content>("api/content",
-    //   newContentItem, this.httpOptions);
-    //   }
+     addContent(newContentItem: Content): Observable<Content>{
+      return this.http.post<Content>("api/content",
+      newContentItem, this.httpOptions);
+     }
 
-    //   updateContent(contentItem: Content): Observable<any>{
-    //     return this.http.put("api/content", contentItem,
-    //     this.httpOptions);
-    //     }
+      updateContent(contentItem: Content): Observable<any>{
+        return this.http.put("api/content", contentItem,
+        this.httpOptions);
+        }
         
 
 
