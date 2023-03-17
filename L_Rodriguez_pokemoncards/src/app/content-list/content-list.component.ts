@@ -3,12 +3,18 @@ import { Component , Input , OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { CardserviceService } from '../cardservice.service';
 
+
+
+
+
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
+
+  
 
   @Input() content:Content[];
   @Input() card:Content[];
@@ -142,6 +148,16 @@ export class ContentListComponent implements OnInit {
     this.content.push(newContent);
     this.content = [...this.content];
   }
+
+  updateContentInList(contentItem: Content): void {
+    this.cardservice.updateContent(contentItem)
+    .subscribe(() =>
+    console.log("Content updated successfully")
+    );
+    }
+    
+
+  
 
 
 }

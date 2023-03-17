@@ -1,8 +1,10 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Content } from './helper-files/content-interface';
 import { CONTENT } from './helper-files/contentDB';
 import { MessageService } from './message.service';
+import { HttpClient} from '@angular/common/http';
 
 
 @Injectable({
@@ -10,7 +12,7 @@ import { MessageService } from './message.service';
 })
 export class CardserviceService {
   getcontentCardArrayLength: any;
-  constructor(private messageservice: MessageService) { }
+  constructor(private messageservice: MessageService, private http: HttpClient) { }
   
   getPokemonCards(): Observable<Content[]> {
     const cards = of(CONTENT)
@@ -22,6 +24,21 @@ export class CardserviceService {
     this.messageservice.add('Content item at :' + id )
     return of(card)
   }
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-type':
+    'application/json' })
+    };
+
+    addContent(newContentItem: Content): Observable<Content>{
+      return this.http.post<Content>("api/content",
+      newContentItem, this.httpOptions);
+      }
+
+      updateContent(contentItem: Content): Observable<any>{
+        return this.http.put("api/content", contentItem,
+        this.httpOptions);
+        }
+        
 
 
   // getClickedCard(cardId:number) {
