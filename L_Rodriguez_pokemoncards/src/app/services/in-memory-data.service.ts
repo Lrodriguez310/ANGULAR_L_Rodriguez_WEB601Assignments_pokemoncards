@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
-
 import { InMemoryDbService } from "angular-in-memory-web-api";
-import { Observable } from 'rxjs/internal/Observable';
 import { Content } from '../helper-files/content-interface';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 // import { CONTENT } from '../helper-files/contentDB';
 
@@ -12,11 +9,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class InMemoryDataService {
+export class InMemoryDataService implements InMemoryDbService {
 
   
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
 
   createDb() {
@@ -25,24 +22,10 @@ export class InMemoryDataService {
     return {content};
   }
 
-
-
-
-
-
-
   genId(content: Content[]): number {
     return content.length > 0 ? Math.max(...content.map(c =>
     c.id)) + 1 : 2000;
     }
-
-    getContent() : Observable<Content[]>{
-      return this.http.get<Content[]>("api/content");
-      }
-
-      
-        
-
 
 
 
