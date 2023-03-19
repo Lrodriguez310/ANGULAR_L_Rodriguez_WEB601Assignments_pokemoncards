@@ -13,7 +13,9 @@
 
 <!-- <app-create-content class="center" (addContentEvent)="addNewContent($event)"></app-create-content> -->
 
-<app-modify-content></app-modify-content>
+<!-- <app-modify-content></app-modify-content> -->
+
+<app-modify-content (contentAdded)="addContentToList($event)"></app-modify-content>
 
 
 <app-create-content (contentCreated)="addNewContent($event)"></app-create-content>

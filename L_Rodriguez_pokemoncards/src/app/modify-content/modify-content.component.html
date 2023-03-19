@@ -1,6 +1,40 @@
-
-
+<!DOCTYPE html>
 <div id="container">
+<div>
+  <hr>
+    <label for="contentTitle">Content Title:</label>
+    <input type="text"[(ngModel)]="newContentItem.title">
+  </div>
+  <br>
+  <div>
+    <label for="contentDescription">Content Description:</label>
+    <input type="text"[(ngModel)]="newContentItem.description">
+  </div>
+  <br>
+  <div>
+    <label for="contentCreator">Content Creator:</label>
+    <input type="text"[(ngModel)]="newContentItem.creator">
+  </div>
+  <br>
+  <div>
+    <label for="contentimgURL">Content Image:</label>
+    <input type="text"[(ngModel)]="newContentItem.imgURL">
+  </div>
+  <br>
+  <div>
+    <label for="contentType">Content Type:</label>
+    <input type="text" [(ngModel)]="newContentItem.type">
+  </div>
+  <br>
+  <div>
+    <label for="contentTags">Content Tags:</label>
+    <input type="text"[(ngModel)]="newContentItem.tags">
+  </div>
+  <hr>
+  <button type="submit" (click)="addContent()">Add Content</button>
+</div>
+
+<!-- <div id="container">
     <div>
         <label for="contentTitle">Content Title:</label>
         <input type="text"[(ngModel)]="title">
@@ -32,4 +66,4 @@
       </div>
       <button (click)="addContent()">Add Content</button>
       <div style="color: red;" *ngIf="errorMessage">{{ errorMessage }}</div>
-    </div>
+    </div> -->

@@ -1,6 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { Content } from './helper-files/content-interface';
 import { MessageService } from './message.service';
 import { HttpClient} from '@angular/common/http';
@@ -10,7 +10,8 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CardserviceService {
-  // getcontentCardArrayLength: any;
+  // getcontentCardArrayLength: any; private contentUrl = 'api/content';
+  private contentUrl = 'api/content';
   constructor(private messageservice: MessageService, private http: HttpClient) { }
   
 
@@ -34,9 +35,12 @@ export class CardserviceService {
     }
 
      addContent(newContentItem: Content): Observable<Content>{
-      return this.http.post<Content>("api/content",
-      newContentItem, this.httpOptions);
-     }
+      return this.http.post<Content>(this.contentUrl, newContentItem, this.httpOptions)
+    .pipe(tap(() => {
+        this.messageservice.add('Content added successfully');
+      })
+    );
+  }
 
       updateContent(contentItem: Content): Observable<any>{
         return this.http.put("api/content", contentItem,
