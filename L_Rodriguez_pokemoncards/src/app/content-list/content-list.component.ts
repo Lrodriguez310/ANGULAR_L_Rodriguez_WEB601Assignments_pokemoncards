@@ -52,8 +52,8 @@ export class ContentListComponent implements OnInit {
   }
 
   addContentToList(newContentItem: Content) : void {
-    this.cardservice.addContent(newContentItem).subscribe(newContentItem =>
-    this.contentList.push(newContentItem));
+    this.cardservice.getContent().subscribe(content => this.contentList = content)
+
     console.log(`Content added succesfully: ${newContentItem.title}`);
     console.log(newContentItem);
 

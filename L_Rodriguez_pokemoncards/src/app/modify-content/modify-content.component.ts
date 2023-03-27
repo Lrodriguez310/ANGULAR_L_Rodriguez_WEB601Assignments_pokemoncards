@@ -29,7 +29,9 @@ export class ModifyContentComponent {
       .addContent(this.newContentItem)
       .subscribe(content  => { 
        // console.log('addContent() called emit'); 
+
         this.contentAdded.emit(content);
+ 
         this.newContentItem = {
           id: null,
           title: '',

@@ -15,7 +15,6 @@ export class InMemoryDataService implements InMemoryDbService {
 
   constructor() { }
 
-
   createDb() {
     // setting it to the value of our array of content
     const content : Content[] = this.CONTENT;
