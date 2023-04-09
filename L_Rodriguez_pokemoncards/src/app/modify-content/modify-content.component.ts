@@ -1,6 +1,11 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { CardserviceService } from '../cardservice.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MessageService } from '../message.service';
+
 
 
 @Component({
@@ -22,7 +27,7 @@ export class ModifyContentComponent {
     id: null
   }
 
-  constructor(private cardservice: CardserviceService) {}
+  constructor(private cardservice: CardserviceService, private dialog: MatDialog,private messageservice: MessageService) {}
 
   addContent(): void {
     this.cardservice
@@ -45,5 +50,28 @@ export class ModifyContentComponent {
       });
 
     }
+
+    openDialog(): void {
+      const dialogRef: MatDialogRef<DialogComponent> = this.dialog.open(DialogComponent, {
+        width: '500px',
+        data: { title: 'Add Book' } 
+      });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // this.bookService.addContent(result).subscribe(() => {
+        //   this.messagesService.add(`Content added: ${result.title}`);
+        //   this.contentAdded.emit(result);
+        // });
+        this.messageservice.add(`Content added: ${result.title}`);
+        this.contentAdded.emit(result);
+        this.cardservice.addContent(result).subscribe();
+      }
+      dialogRef.componentInstance.contentAdded.subscribe((content: Content) => {
+        console.log(`Content added: ${content.title}`);
+        this.contentAdded.emit(content);
+      });
+    });
+  }
 
 }

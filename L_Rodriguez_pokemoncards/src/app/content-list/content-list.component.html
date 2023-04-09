@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <!-- <div id="content-card" [className]="isFirst ? 'content-card2px' : 'content-card'">
     <h4>{{ content.title }}</h4>
     <p>{{ content.description }}</p>
@@ -15,10 +17,11 @@
 
 <!-- <app-modify-content></app-modify-content> -->
 
+
 <app-modify-content (contentAdded)="addContentToList($event)"></app-modify-content>
 
 
-<app-create-content (contentCreated)="addNewContent($event)"></app-create-content>
+<!-- <app-create-content (contentCreated)="addNewContent($event)"></app-create-content> -->
 
 
 
@@ -26,7 +29,10 @@
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8 mt-5">
-        <input [(ngModel)]="searchTerm" placeholder="Enter title">
+        <mat-form-field>
+          <input matInput [(ngModel)]="searchTerm" placeholder="Enter Title"  />
+          </mat-form-field>
+        <!-- <input [(ngModel)]="searchTerm" placeholder="Enter title"> -->
         <button (click)="search()">Search</button>
         <div *ngIf="message">
           <p [ngStyle]="{ color: messageColor }">{{ message }}</p>

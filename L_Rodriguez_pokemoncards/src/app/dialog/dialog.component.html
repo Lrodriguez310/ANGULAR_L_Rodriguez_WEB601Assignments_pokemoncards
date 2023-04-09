@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Add {{contentType}}</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput placeholder="ID" [(ngModel)]="newContent.id" name="id" disabled>
+      </mat-form-field>
+      
+    <mat-form-field>
+        <input matInput placeholder="Title" [(ngModel)]="newContent.title">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Description" [(ngModel)]="newContent.description">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Creator" [(ngModel)]="newContent.creator">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Image URL" [(ngModel)]="newContent.imgURL">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Type" [(ngModel)]="newContent.type">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Tag" [(ngModel)]="newContent.tags">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button (click)="add()">Add Content</button>
+</div>

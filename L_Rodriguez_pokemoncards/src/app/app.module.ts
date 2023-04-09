@@ -13,6 +13,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./services/in-memory-data.service";
 import { ModifyContentComponent } from './modify-content/modify-content.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { ModifyContentComponent } from './modify-content/modify-content.componen
     HoverAffectDirective,
     CreateContentComponent,
     MessagesComponent,
-    ModifyContentComponent
+    ModifyContentComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,10 @@ import { ModifyContentComponent } from './modify-content/modify-content.componen
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{
       dataEncapsulation: false,
       delay: 1000,
-      })
+      }),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
