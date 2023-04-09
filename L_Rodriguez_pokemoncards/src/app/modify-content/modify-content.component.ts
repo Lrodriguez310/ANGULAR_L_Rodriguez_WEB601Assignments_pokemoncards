@@ -54,18 +54,16 @@ export class ModifyContentComponent {
     openDialog(): void {
       const dialogRef: MatDialogRef<DialogComponent> = this.dialog.open(DialogComponent, {
         width: '500px',
-        data: { title: 'Add Book' } 
+        data: { title: 'Add Card' } 
       });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // this.bookService.addContent(result).subscribe(() => {
-        //   this.messagesService.add(`Content added: ${result.title}`);
-        //   this.contentAdded.emit(result);
-        // });
-        this.messageservice.add(`Content added: ${result.title}`);
-        this.contentAdded.emit(result);
-        this.cardservice.addContent(result).subscribe();
+      
+        this.cardservice.addContent(result).subscribe(() => {
+          this.messageservice.add(`Content added: ${result.title}`);
+          this.contentAdded.emit(result);
+        });
       }
       dialogRef.componentInstance.contentAdded.subscribe((content: Content) => {
         console.log(`Content added: ${content.title}`);

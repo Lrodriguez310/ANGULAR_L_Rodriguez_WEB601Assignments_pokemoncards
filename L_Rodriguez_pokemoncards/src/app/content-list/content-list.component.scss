@@ -13,3 +13,68 @@
     width:30%;
 }
 
+
+.Fire {
+    background: #ceabab;
+    color: #4d3232;
+  }
+  
+  .Water {
+    background: #bbabce;
+    color: #40324d;
+  }
+  
+  .contentTitle {
+    background: #4c4c4c;
+    color: #d4d4d4;
+  }
+  
+  .contentGenre {
+    color: #d4d4d4;
+    background: #4c4c4c;
+  }
+  
+  .Fire > .contentTitle, .Fire > .contentGenre {
+    background: black;
+    color: white;
+  }
+  
+  .Water > .contentTitle, .Water > .contentGenre {
+    background: #40324d;
+    color: #bbabce;
+  }
+  
+  .contentCard img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .contentMembers {
+    font-size: small;
+    font-style: italic;
+  }
+  
+  .contentTags {
+    font-size: smaller;
+    text-align: left;
+  }
+  
+  .First {
+    border: 2px solid #5f4242;
+  }
+  
+  .not-found {
+    color: rgb(104, 15, 15);
+  }
+  
+  .found {
+    color: green;
+}
+.Title{
+  font-size:xx-large;
+}
+.Type{
+  font-size: x-large;
+  color: white;
+}
+
