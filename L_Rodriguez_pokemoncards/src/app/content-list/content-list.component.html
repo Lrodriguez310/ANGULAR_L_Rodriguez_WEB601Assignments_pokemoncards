@@ -31,14 +31,26 @@
           <img mat-card-md-image  *ngIf="!item.imgURL" src="https://ae01.alicdn.com/kf/S641257d0c1c045c09bdc8c6a2be34f39g/10000PS-Arceus-Vmax-Pokemon-Cards-Metal-Spanish-Cards-Pikachu-Charizard-Vstar-Golden-Limited-Kids-Gift-Game.jpg_Q90.jpg_.webp"  alt="" >
         </mat-card-title-group>
       </mat-card-header>
+
+
+      
+
+
       <mat-card-content>
         <p class="contentMembers">{{ item.creator }}</p>
-        <p class="contentDesc">{{ item.description }}</p>
+       
         <ul *ngIf="item.tags">
           <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
             {{ tag }}
           </li>
         </ul>
+
+
+        <mat-card-subtitle class="contentDetails"><a [routerLink]="['/content',item.id]" routerLinkActive="active">
+          Content Details =>
+        </a></mat-card-subtitle>
+
+
       </mat-card-content>
     </mat-card>
   </mat-tab>
@@ -52,15 +64,30 @@
           <img mat-card-md-image  *ngIf="item.imgURL" src="{{ item.imgURL }}" alt=""   >
           <img mat-card-md-image  *ngIf="!item.imgURL" src="https://ae01.alicdn.com/kf/S641257d0c1c045c09bdc8c6a2be34f39g/10000PS-Arceus-Vmax-Pokemon-Cards-Metal-Spanish-Cards-Pikachu-Charizard-Vstar-Golden-Limited-Kids-Gift-Game.jpg_Q90.jpg_.webp"  alt=""  >
         </mat-card-title-group>
+
+       
+
+
+
       </mat-card-header>
+
+      
+
+
       <mat-card-content>
         <p class="contentMembers">{{ item.creator }}</p>
-        <p class="contentDesc">{{ item.description }}</p>
+        
         <ul *ngIf="item.tags">
           <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
             {{ tag }}
           </li>
         </ul>
+
+        <mat-card-subtitle class="contentDetails"><a [routerLink]="['/content',item.id]" routerLinkActive="active">
+          Content Details =>
+        </a></mat-card-subtitle>
+
+
       </mat-card-content>
     </mat-card>
   </mat-tab>
@@ -75,14 +102,23 @@
           <img mat-card-md-image  *ngIf="!item.imgURL" src="https://ae01.alicdn.com/kf/S641257d0c1c045c09bdc8c6a2be34f39g/10000PS-Arceus-Vmax-Pokemon-Cards-Metal-Spanish-Cards-Pikachu-Charizard-Vstar-Golden-Limited-Kids-Gift-Game.jpg_Q90.jpg_.webp"  alt=""  >
         </mat-card-title-group>
       </mat-card-header>
+
+
+      
+
       <mat-card-content>
         <p class="contentMembers">{{ item.creator }}</p>
-        <p class="contentDesc">{{ item.description }}</p>
+       
         <ul *ngIf="item.tags">
           <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
             {{ tag }}
           </li>
         </ul>
+
+        <mat-card-subtitle class="contentDetails"><a [routerLink]="['/content',item.id]" routerLinkActive="active">
+          Content Details =>
+        </a></mat-card-subtitle>
+
       </mat-card-content>
     </mat-card>
   </mat-tab>
@@ -93,35 +129,3 @@
 <!-- <app-create-content (contentCreated)="addNewContent($event)"></app-create-content> -->
 
 
-
-<div class="container">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8 mt-5">
-        <mat-form-field>
-          <input matInput [(ngModel)]="searchTerm" placeholder="Enter Title"  />
-          </mat-form-field>
-        <!-- <input [(ngModel)]="searchTerm" placeholder="Enter title"> -->
-        <button (click)="search()">Search</button>
-        <div *ngIf="message">
-          <p [ngStyle]="{ color: messageColor }">{{ message }}</p>
-        </div>
-  </div> 
-      </div>
-      <div class="col-md-2"></div>
-    </div>
-  
-    <div class="row">
-      <h2 class="m-5">Fire</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-warning text-dark" *ngFor="let item of contentList | contentFilter:'Fire'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
-    </div>
-  
-    <div class="row">
-      <h2 class="m-5">Water</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-dark text-warning" *ngFor="let item of contentList | contentFilter:'Water'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
-    </div>
-
-    <div class="row">
-      <h2 class="m-5">Plant</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-primary text-danger" *ngFor="let item of contentList | contentFilter:'Plant'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
-    </div>

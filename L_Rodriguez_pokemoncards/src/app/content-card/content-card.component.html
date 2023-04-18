@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <div class="{{ content.type }}">
   <h2>{{ content.title }}</h2>
-  <p>{{ content.description }}</p>
+ 
   <img *ngIf="content.imgURL;else defaultImage" class="image" src="{{ content.imgURL }}" (click)="imageText()"/><br>
   By:<em> {{ content.creator }}</em>
   <p>

@@ -1,6 +1,7 @@
 import { Component , Input , OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { CardserviceService } from '../cardservice.service';
+import { ActivatedRoute } from "@angular/router";
 
 
 
@@ -22,10 +23,12 @@ export class ContentListComponent implements OnInit {
   messageColor: string = '';
 
   
- constructor(private cardservice: CardserviceService){
+ constructor(private cardservice: CardserviceService, private route: ActivatedRoute){
   
   this.contentList= [];
- 
+  this.route.params.subscribe(params => {
+    const id = params['id'];
+  })
   }
 
   search() {

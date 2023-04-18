@@ -10,6 +10,8 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CardserviceService {
+
+  
   // getcontentCardArrayLength: any; private contentUrl = 'api/content';
   private contentUrl = 'api/content';
   constructor(private messageservice: MessageService, private http: HttpClient) { }
@@ -34,6 +36,11 @@ export class CardserviceService {
       return this.http.get<Content[]>("api/content");
     }
 
+    getContentById(id: string | null): Observable<Content> {
+      const url = `api/content/${id}`;
+      return this.http.get<Content>(url);
+    }
+
      addContent(newContentItem: Content): Observable<Content>{
       return this.http.post<Content>(this.contentUrl, newContentItem, this.httpOptions)
     .pipe(tap(() => {
@@ -46,6 +53,8 @@ export class CardserviceService {
         return this.http.put("api/content", contentItem,
         this.httpOptions);
         }
+
+       
         
 
 

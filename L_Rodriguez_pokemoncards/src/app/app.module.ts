@@ -22,6 +22,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatSelectModule} from "@angular/material/select";
 import { MatDialogModule } from '@angular/material/dialog';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     CreateContentComponent,
     MessagesComponent,
     ModifyContentComponent,
-    DialogComponent
+    DialogComponent,
+    ContentDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<br>
+<button mat-stroked-button color="accent"><a routerLink="/list" routerLinkActive="active">Back to Content List</a></button><br>
+<mat-card class="card">
+    <div *ngIf="contentItem" class="container" >
+      <mat-card-header>
+        <mat-card-title><h2>{{ contentItem.title }}</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ contentItem.description }}</p>
+        <img mat-card-md-image  *ngIf="contentItem.imgURL" src="{{ contentItem.imgURL }}" alt="" ><br>
+        <img mat-card-md-image  *ngIf="!contentItem.imgURL" src="https://ae01.alicdn.com/kf/S641257d0c1c045c09bdc8c6a2be34f39g/10000PS-Arceus-Vmax-Pokemon-Cards-Metal-Spanish-Cards-Pikachu-Charizard-Vstar-Golden-Limited-Kids-Gift-Game.jpg_Q90.jpg_.webp"  alt="" ><br>
+        By:<em> {{ contentItem.creator }}</em>
+        <p appHoverAffect highlightType="type" >Type: {{ contentItem.type }}</p>
+      </mat-card-content>
+  
+    </div>
+  </mat-card>
