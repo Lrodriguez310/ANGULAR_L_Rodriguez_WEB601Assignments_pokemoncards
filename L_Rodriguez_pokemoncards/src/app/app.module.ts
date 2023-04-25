@@ -59,7 +59,7 @@ import { LogUpdateService } from './log-update.service';
     MatSelectModule,
     MatDialogModule,
   ],
-  providers: [],
+  providers: [LogUpdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

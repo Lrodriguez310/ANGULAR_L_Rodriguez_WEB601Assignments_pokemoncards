@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "http-server -p 8080 -c-1 dist/l-rodriguez-pokemoncards",
-    "build": "ng build",
+    "build": "ng build --output-path=dist/l-rodriguez-pokemoncards",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "gencomponent": "npm run-script generatecomponent",
