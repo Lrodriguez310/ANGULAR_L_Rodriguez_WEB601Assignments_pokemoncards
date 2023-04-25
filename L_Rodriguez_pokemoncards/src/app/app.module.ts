@@ -24,6 +24,8 @@ import {MatSelectModule} from "@angular/material/select";
 import { MatDialogModule } from '@angular/material/dialog';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { LogUpdateService } from './log-update.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatCardModule,
     MatTabsModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
